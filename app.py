@@ -31,8 +31,8 @@ def run_pipeline():
             ('Wireless Mouse', 10, Decimal('1200.00'), 'Pune-New'), 
             ('HDMI Cable', 12, Decimal('350.00'), 'Pune-New')
         ]
-          insert_query = "INSERT INTO daily_sales VALUES (%s, %s, %s, %s)"
-           cursor.executemany(insert_query, new_transactions)
+        insert_query = "INSERT INTO daily_sales VALUES (%s, %s, %s, %s)"
+        cursor.executemany(insert_query, new_transactions)
             
         connection.commit()
 
