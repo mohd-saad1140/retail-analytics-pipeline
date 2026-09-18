@@ -3,9 +3,9 @@
 A lightweight data engineering pipeline that simulates an automated end-of-day retail ingestion engine. This project demonstrates backend integration between Python and a relational MySQL database.
 
 ## 🛠️ Tech Stack
-- **Language:** Python 3.15
+- **Language:** Python 3.11
 - **Database:** MySQL
-- **Libraries:** `mysql-connector-python`
+- **Libraries:** mysql-connector-python
 
 ## ⚙️ How It Works
 1. **Database Connection:** Establishes a direct connection socket using `mysql-connector-python`.
