@@ -65,6 +65,6 @@ def run_pipeline():
         if 'connection' in locals() and connection.is_connected():
             cursor.close()
             connection.close()
-
+            
 if __name__ == "__main__":
     run_pipeline()
