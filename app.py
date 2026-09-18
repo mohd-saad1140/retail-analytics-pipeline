@@ -1,4 +1,5 @@
 import mysql.connector
+import os
 from decimal import Decimal
 
 def run_pipeline():
@@ -6,7 +7,7 @@ def run_pipeline():
         connection = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="Admin@1234", 
+            password=os.getenv("DB_PASSWORD"), 
             database="retail_analytics_db"
         )
         cursor = connection.cursor()
@@ -30,10 +31,8 @@ def run_pipeline():
             ('Wireless Mouse', 10, Decimal('1200.00'), 'Pune-New'), 
             ('HDMI Cable', 12, Decimal('350.00'), 'Pune-New')
         ]
-
-        insert_query = "INSERT INTO daily_sales VALUES (%s, %s, %s, %s)"
-        for row in new_transactions:
-            cursor.execute(insert_query, row)
+          insert_query = "INSERT INTO daily_sales VALUES (%s, %s, %s, %s)"
+           cursor.executemany(insert_query, new_transactions)
             
         connection.commit()
 
